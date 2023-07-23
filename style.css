@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  tr.header {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  tr.income {
+    background-color: #eaf7ea;
+    color: green;
+  }
+  
+
+  tr.expense {
+    background-color: #f7eaea;
+    color: red;
+  }
+  
