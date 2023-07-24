@@ -1,4 +1,4 @@
-const transactions = [
+const transaction = [
     {
       "id": 1,
       "date": "2019-12-01",
