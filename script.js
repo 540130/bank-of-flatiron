@@ -1,133 +1,57 @@
-const transaction = [
-    {
-      "id": 1,
-      "date": "2019-12-01",
-      "description": "Paycheck from Bob's Burgers",
-      "category": "Income",
-      "amount": 1000
-    },
-    {
-      "id": 2,
-      "date": "2019-12-01",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
-      "id": 3,
-      "date": "2019-12-02",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
-      "id": 4,
-      "date": "2019-12-04",
-      "description": "Sunglasses, Urban Outfitters",
-      "category": "Fashion",
-      "amount": -24.99
-    },
-    {
-      "id": 5,
-      "date": "2019-12-06",
-      "description": "Venmo, Alice Pays you for Burrito",
-      "category": "Food",
-      "amount": 8.75
-    },
-    {
-      "id": 6,
-      "date": "2019-12-06",
-      "description": "Some other transaction",
-      "category": "Other",
-      "amount": -15.50
-    }
-  ];
-  
-  // Log all transactions
-  console.log("All Transactions:");
-  console.log(transactions);
-  
-  // Filter transactions by category
-  const foodTransactions = transactions.filter((transaction) => transaction.category === "Food");
-  console.log("Food Transactions:");
-  console.log(foodTransactions);
-  
-  // Calculate total income and expenses
-  const totalIncome = transactions.reduce((total, transaction) => {
-    return transaction.amount > 0 ? total + transaction.amount : total;
-  }, 0);
-  
-  const totalExpenses = transactions.reduce((total, transaction) => {
-    return transaction.amount < 0 ? total + transaction.amount : total;
-  }, 0);
-  
-  console.log("Total Income:", totalIncome);
-  console.log("Total Expenses:", totalExpenses);
-  import React from "react";
+// script.js
 
-  const transactions = [
-    {
-      "id": 1,
-      "date": "2019-12-01",
-      "description": "Paycheck from Bob's Burgers",
-      "category": "Income",
-      "amount": 1000
-    },
-    {
-      "id": 2,
-      "date": "2019-12-01",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
-      "id": 3,
-      "date": "2019-12-02",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
-      "id": 4,
-      "date": "2019-12-04",
-      "description": "Sunglasses, Urban Outfitters",
-      "category": "Fashion",
-      "amount": -24.99
-    },
-    {
-      "id": 5,
-      "date": "2019-12-06",
-      "description": "Venmo, Alice Pays you for Burrito",
-      "category": "Food",
-      "amount": 8.75
-    },
-    {
-      "id": 6,
-      "date": "2019-12-06",
-      "description": "Some other transaction",
-      "category": "Other",
-      "amount": -15.50
-    }
-  ];
-  
-  function App() {
-    return (
-      <div>
-        <h1>All Transactions</h1>
-        <ul>
-          {transactions.map((transaction) => (
-            <li key={transaction.id}>
-              <p>Date: {transaction.date}</p>
-              <p>Description: {transaction.description}</p>
-              <p>Category: {transaction.category}</p>
-              <p>Amount: {transaction.amount}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-  
-  export default App;
+// Destructure the 'React' and 'ReactDOM' objects from the 'window' object
+const { React, ReactDOM } = window;
+
+// TransactionRow component
+const TransactionRow = ({ id, date, description, category, amount }) => {
+  return (
+    <tr>
+      <td>{id}</td>
+      <td>{date}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
+    </tr>
+  );
+};
+
+// TransactionTable component
+const TransactionTable = ({ transactions }) => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {transactions.map((transaction) => (
+          <TransactionRow key={transaction.id} {...transaction} />
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+// App component
+const App = ({ transactions }) => {
+  return (
+    <div>
+      <h1>Transactions</h1>
+      <TransactionTable transactions={transactions} />
+      <button>Transact</button>
+    </div>
+  );
+};
+
+// Find the 'root' element in the HTML and render the App component
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App transactions={transactionsData} />, rootElement);
+
 
   
