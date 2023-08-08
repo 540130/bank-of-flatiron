@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transactions App</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000001" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="style.css">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>Enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- Include the React and React DOM libraries -->
-    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
-
-    <script src="App.js"></script>
-    <script src="TransactionRow.js"></script>
-    <script src="TransactionTable.js"></script>
-    <script src="SearchBar.js"></script>
-    <script src="TransactionForm.js"></script>
-
-    <!-- Include the data (transactionsData) -->
-    <script>
-      const transactionsData = [
-        {
-          id: 1,
-          date: "2019-12-01",
-          description: "Paycheck from Bob's Burgers",
-          category: "Income",
-          amount: 1000,
-        },
-        // Add other transactions here...
-      ];
-    </script>
-
-    <!-- Render the App component in the 'root' div -->
-    <script>
-      const rootElement = document.getElementById("root");
-      ReactDOM.render(<App transactions={transactionsData} />, rootElement);
-    </script>
-</body>
+  </body>
 </html>
